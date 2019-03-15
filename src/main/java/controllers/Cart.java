@@ -7,6 +7,7 @@ import models.ShoppingCart;
 import models.User;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,7 +33,9 @@ public class Cart  extends HttpServlet {
 
 
         req.setAttribute("products", productDAO.getProducts());
-        req.getRequestDispatcher("/products.jsp").forward(req, resp);
+        //req.getRequestDispatcher("/products.jsp").forward(req, resp);
+
+        resp.sendRedirect("products");
 
     }
 }
